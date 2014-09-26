@@ -165,11 +165,11 @@ source $BIN_DIR/steps/pylibmc
 # Libffi support.
 source $BIN_DIR/steps/cryptography
 
-# Wkhtmltopdf binary.
-source $BIN_DIR/steps/wkhtmltopdf
-
 # Install dependencies with Pip.
 source $BIN_DIR/steps/pip-install
+
+# Wkhtmltopdf binary.
+source $BIN_DIR/steps/wkhtmltopdf
 
 # Django collectstatic support.
 sub-env $BIN_DIR/steps/collectstatic

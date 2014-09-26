@@ -5,7 +5,7 @@ set -e
 WKHTMLTOPDF_FILENAME="wkhtmltopdf.tar.bz2"
 WKHTMLTOPDF_BINARY="https://wkhtmltopdf.googlecode.com/files/wkhtmltopdf-0.11.0_rc1-static-amd64.tar.bz2"
 WKHTMLTOPDF_BINARY_NAME="wkhtmltopdf-amd64"
-# WKHTMLTOPDF_PATH="/app/"
+WKHTMLTOPDF_PATH=".heroku/python/bin/wkhtmltopdf"
 
 echo "-----> wkhtmltopdf: Curl wkhtmltopdf compressed binary << $WKHTMLTOPDF_BINARY"
 curl -L $WKHTMLTOPDF_BINARY -o $WKHTMLTOPDF_FILENAME
@@ -17,7 +17,7 @@ echo "-----> wkhtmltopdf : Removing compressed binary << $WKHTMLTOPDF_FILENAME"
 rm -f $WKHTMLTOPDF_FILENAME
 
 echo "-----> wkhtmltopdf : Moving binary to the bin dir << $WKHTMLTOPDF_PATH"
-mv $WKHTMLTOPDF_BINARY_NAME .heroku/vendor/bin/wkhtmltopdf
+mv $WKHTMLTOPDF_BINARY_NAME $WKHTMLTOPDF_PATH
 
 echo "-----> wkhtmltopdf : Setting permissions << $WKHTMLTOPDF_PATH"
-chmod +x .heroku/vendor/bin/wkhtmltopdf
+chmod +x $WKHTMLTOPDF_PATH
