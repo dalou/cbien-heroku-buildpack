@@ -166,7 +166,7 @@ source $BIN_DIR/steps/pylibmc
 source $BIN_DIR/steps/cryptography
 
 # Wkhtmltopdf binary.
-source $BIN_DIR/steps/wkhtmltopdf
+#source $BIN_DIR/steps/wkhtmltopdf
 
 # Install dependencies with Pip.
 source $BIN_DIR/steps/pip-install
