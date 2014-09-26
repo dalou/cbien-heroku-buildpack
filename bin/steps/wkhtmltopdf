@@ -5,23 +5,22 @@ set -e
 BIN_PATH="$1/bin/"
 mkdir -p $BIN_PATH
 
-WKHTMLTOPDF_FILENAME = "WKHTMLTOPDF_BINARY"
+WKHTMLTOPDF_FILENAME="wkhtmltopdf-0.11.0_rc1-static-amd64.tar.bz2"
 WKHTMLTOPDF_BINARY="https://wkhtmltopdf.googlecode.com/files/$WKHTMLTOPDF_BINARY"
 WKHTMLTOPDF_PATH="$1/bin/wkhtmltopdf"
-WKHTMLTOPDF_COMPRESSED_PATH="$1/bin/wkhtmltopdf.tar.xz"
 WKHTMLTOX_PATH="$1/bin/wkhtmltox"
 
 echo "-----> wkhtmltopdf : Transferring wkhtmltopdf compressed binary"
 curl -O $WKHTMLTOPDF_BINARY >/dev/null 2>&1
 
 echo "-----> wkhtmltopdf : Decompressing binary"
-tar xjf $WKHTMLTOPDF_FILENAME --directory $BIN_PATH >/dev/null 2>&1
+tar xjf $WKHTMLTOPDF_FILENAME >/dev/null 2>&1
 
 # echo "-----> wkhtmltopdf : Removing compressed binary"
 # rm -f $WKHTMLTOPDF_COMPRESSED_PATH
 
 echo "-----> wkhtmltopdf : Moving binary to the right place from wkhtmltox"
-mv $WKHTMLTOX_PATH/bin/wkhtmltopdf $BIN_PATH
+mv wkhtmltopdf-amd64 $WKHTMLTOPDF_PATH
 
 # echo "-----> wkhtmltopdf : Removing wkhtmltox folder"
 # rm -rf $WKHTMLTOX_PATH
