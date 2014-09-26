@@ -10,20 +10,20 @@ WKHTMLTOPDF_PATH="$1/bin/wkhtmltopdf"
 WKHTMLTOPDF_COMPRESSED_PATH="$1/bin/wkhtmltopdf.tar.xz"
 WKHTMLTOX_PATH="$1/bin/wkhtmltox"
 
-echo "-----> wkhtmltox : Transferring wkhtmltopdf compressed binary"
+echo "-----> wkhtmltopdf : Transferring wkhtmltopdf compressed binary"
 curl -L $WKHTMLTOPDF_BINARY -o $WKHTMLTOPDF_COMPRESSED_PATH
 
-echo "-----> wkhtmltox : Decompressing binary"
+echo "-----> wkhtmltopdf : Decompressing binary"
 tar xJf $WKHTMLTOPDF_COMPRESSED_PATH --directory $BIN_PATH
 
-echo "-----> wkhtmltox : Removing compressed binary"
+echo "-----> wkhtmltopdf : Removing compressed binary"
 rm -f $WKHTMLTOPDF_COMPRESSED_PATH
 
-echo "-----> wkhtmltox : Moving binary to the right place from wkhtmltox"
+echo "-----> wkhtmltopdf : Moving binary to the right place from wkhtmltox"
 mv $WKHTMLTOX_PATH/bin/wkhtmltopdf $BIN_PATH
 
-echo "-----> wkhtmltox : Removing wkhtmltox folder"
+echo "-----> wkhtmltopdf : Removing wkhtmltox folder"
 rm -rf $WKHTMLTOX_PATH
 
-echo "-----> wkhtmltox : Setting permissions"
+echo "-----> wkhtmltopdf : Setting permissions"
 chmod +x $WKHTMLTOPDF_PATH
