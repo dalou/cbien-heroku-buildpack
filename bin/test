@@ -86,6 +86,12 @@ testDetectSimpleRuntimePython3() {
   assertCapturedSuccess
 }
 
+testDetectWkhtmltopdf() {
+  capture command -v wkhtmltopdf
+  assertCapturedEquals "/app/.heroku/python/bin/wkhtmltopdf"
+  assertCapturedSuccess
+}
+
 ## utils ########################################
 
 pushd $(dirname 0) >/dev/null
