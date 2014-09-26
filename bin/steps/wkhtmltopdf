@@ -3,7 +3,7 @@
 set -e
 
 WKHTMLTOPDF_FILENAME="wkhtmltopdf.tar.bz2"
-WKHTMLTOPDF_BINARY="https://wkhtmltopdf.googlecode.com/files/wkhtmltopdf-0.11.0_rc1-static-amd64.tar.bz2"
+WKHTMLTOPDF_BINARY="https://wkhtmltopdf.googlecode.com/files/wkhtmltopdf-0.9.9-static-amd64.tar.bz2"
 WKHTMLTOPDF_BINARY_NAME="wkhtmltopdf-amd64"
 WKHTMLTOPDF_PATH=".heroku/python/bin/wkhtmltopdf"
 
