@@ -5,25 +5,26 @@ set -e
 BIN_PATH="$1/bin/"
 mkdir -p $BIN_PATH
 
-WKHTMLTOPDF_BINARY="http://sourceforge.net/projects/wkhtmltopdf/files/0.12.1/wkhtmltox-0.12.1_linux-trusty-amd64.deb/download"
+WKHTMLTOPDF_FILENAME = "WKHTMLTOPDF_BINARY"
+WKHTMLTOPDF_BINARY="https://wkhtmltopdf.googlecode.com/files/$WKHTMLTOPDF_BINARY"
 WKHTMLTOPDF_PATH="$1/bin/wkhtmltopdf"
 WKHTMLTOPDF_COMPRESSED_PATH="$1/bin/wkhtmltopdf.tar.xz"
 WKHTMLTOX_PATH="$1/bin/wkhtmltox"
 
 echo "-----> wkhtmltopdf : Transferring wkhtmltopdf compressed binary"
-curl -L $WKHTMLTOPDF_BINARY -o $WKHTMLTOPDF_COMPRESSED_PATH
+curl -O $WKHTMLTOPDF_BINARY >/dev/null 2>&1
 
 echo "-----> wkhtmltopdf : Decompressing binary"
-tar xJf $WKHTMLTOPDF_COMPRESSED_PATH --directory $BIN_PATH
+tar xjf $WKHTMLTOPDF_FILENAME --directory $BIN_PATH >/dev/null 2>&1
 
-echo "-----> wkhtmltopdf : Removing compressed binary"
-rm -f $WKHTMLTOPDF_COMPRESSED_PATH
+# echo "-----> wkhtmltopdf : Removing compressed binary"
+# rm -f $WKHTMLTOPDF_COMPRESSED_PATH
 
 echo "-----> wkhtmltopdf : Moving binary to the right place from wkhtmltox"
 mv $WKHTMLTOX_PATH/bin/wkhtmltopdf $BIN_PATH
 
-echo "-----> wkhtmltopdf : Removing wkhtmltox folder"
-rm -rf $WKHTMLTOX_PATH
+# echo "-----> wkhtmltopdf : Removing wkhtmltox folder"
+# rm -rf $WKHTMLTOX_PATH
 
 echo "-----> wkhtmltopdf : Setting permissions"
 chmod +x $WKHTMLTOPDF_PATH
