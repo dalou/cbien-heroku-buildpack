@@ -2,14 +2,10 @@
 
 set -e
 
-BIN_PATH="$1/bin/"
-mkdir -p $BIN_PATH
-
 WKHTMLTOPDF_FILENAME="wkhtmltopdf.tar.bz2"
 WKHTMLTOPDF_BINARY="https://wkhtmltopdf.googlecode.com/files/wkhtmltopdf-0.11.0_rc1-static-amd64.tar.bz2"
 WKHTMLTOPDF_BINARY_NAME="wkhtmltopdf-amd64"
-WKHTMLTOPDF_PATH="$1/bin/wkhtmltopdf"
-WKHTMLTOX_PATH="$1/bin/wkhtmltox"
+WKHTMLTOPDF_PATH="/bin/wkhtmltopdf"
 
 echo "-----> wkhtmltopdf: Curl wkhtmltopdf compressed binary << $WKHTMLTOPDF_BINARY"
 curl -L $WKHTMLTOPDF_BINARY -o $WKHTMLTOPDF_FILENAME
