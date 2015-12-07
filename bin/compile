@@ -186,6 +186,12 @@ source $BIN_DIR/steps/cryptography
 # GDAL support.
 source $BIN_DIR/steps/gdal
 
+# SASS support.
+source $BIN_DIR/steps/sass
+
+# Gettext support.
+source $BIN_DIR/steps/gettext
+
 # Install dependencies with Pip.
 source $BIN_DIR/steps/pip-install
 
