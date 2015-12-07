@@ -4,11 +4,11 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 
 # install sass
-status "Installing Sass"
+puts-step "Installing Sass"
 export GEM_HOME=$BUILD_DIR/.gem/ruby/1.9.1
 PATH="$GEM_HOME/bin:$PATH"
 if test -d $CACHE_DIR/ruby/.gem; then
-  status "Restoring ruby gems directory from cache"
+  puts-step "Restoring ruby gems directory from cache"
   cp -r $CACHE_DIR/ruby/.gem $BUILD_DIR
   HOME=$BUILD_DIR gem update sass --user-install --no-rdoc --no-ri
 else
@@ -21,11 +21,11 @@ mkdir -p $CACHE_DIR/ruby
 
 # If app has a gems directory, cache it.
 if test -d $BUILD_DIR/.gem; then
-  status "Caching ruby gems directory for future builds"
+  puts-step "Caching ruby gems directory for future builds"
   cp -r $BUILD_DIR/.gem $CACHE_DIR/ruby
 fi
 
-status "Building runtime environment"
+puts-step "Building runtime environment"
 mkdir -p $BUILD_DIR/.profile.d
 echo "export PATH=\"\$HOME/vendor/node/bin:\$HOME/bin:\$HOME/node_modules/.bin:\$PATH\";" > $BUILD_DIR/.profile.d/nodejs.sh
 echo "export PATH=\"\$HOME/.gem/ruby/1.9.1/bin:\$PATH\"" > $BUILD_DIR/.profile.d/ruby.sh
