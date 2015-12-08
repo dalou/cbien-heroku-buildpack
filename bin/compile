@@ -193,7 +193,7 @@ source $BIN_DIR/steps/pip-install
 # source $BIN_DIR/steps/sass
 
 # Gettext support.
-# source $BIN_DIR/steps/gettext
+source $BIN_DIR/steps/gettext
 
 # Django collectstatic support.
 sub-env $BIN_DIR/steps/collectstatic

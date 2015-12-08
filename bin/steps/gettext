@@ -9,16 +9,11 @@ CACHE_DIR=$2
 # Syntax sugar.
 source $BIN_DIR/utils
 
-cd $BUILD_DIR
-
 if [ -d $TARGET_DIR/gettext ]; then
 	echo "$PWD/gettext already installed"
-	cd -
 	exit 0
 fi
 
 puts-step "Installing gettext"
 curl --silent --max-time 60 --location "$GETTEXT_TARBALL" | tar xz
 puts-step "Done in $TARGET_DIR/gettext"
-
-cd -
