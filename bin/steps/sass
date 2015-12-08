@@ -3,6 +3,8 @@
 BUILD_DIR=$1
 CACHE_DIR=$2
 
+bpwatch start sass
+
 # install sass
 puts-step "Installing Sass"
 export GEM_HOME=$BUILD_DIR/.gem/ruby/1.9.1
@@ -29,3 +31,5 @@ puts-step "Building runtime environment"
 mkdir -p $BUILD_DIR/.profile.d
 echo "export PATH=\"\$HOME/vendor/node/bin:\$HOME/bin:\$HOME/node_modules/.bin:\$PATH\";" > $BUILD_DIR/.profile.d/nodejs.sh
 echo "export PATH=\"\$HOME/.gem/ruby/1.9.1/bin:\$PATH\"" > $BUILD_DIR/.profile.d/ruby.sh
+
+bpwatch stop sass
