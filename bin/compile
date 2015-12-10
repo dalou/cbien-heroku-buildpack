@@ -190,7 +190,7 @@ source $BIN_DIR/steps/gdal
 source $BIN_DIR/steps/pip-install
 
 # SASS support.
-# source $BIN_DIR/steps/sass
+source $BIN_DIR/steps/sass
 
 # Gettext support.
 source $BIN_DIR/steps/gettext
