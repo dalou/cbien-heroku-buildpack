@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 
-#make compilemessages
+PATH=$HOME/gettext/bin:$PATH
+make compilemessages
 #make sass
