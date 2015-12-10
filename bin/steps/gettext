@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
 # bin/compile <build-dir> <cache-dir>
 
-GETTEXT_TARBALL=http://fb_wanted.s3.amazonaws.com/bp/gettext.tar.gz
-TARGET_DIR=$HOME
-BUILD_DIR=$1
-CACHE_DIR=$2
+#GETTEXT_TARBALL=http://fb_wanted.s3.amazonaws.com/bp/gettext.tar.gz
+#TARGET_DIR=$HOME
+#BUILD_DIR=$1
+#CACHE_DIR=$2
 
 # Syntax sugar.
-source $BIN_DIR/utils
+#source $BIN_DIR/utils
 
-bpwatch start gettext
+#bpwatch start gettext
 
 if [ -d $TARGET_DIR/gettext ]; then
 	echo "$PWD/gettext already installed"
@@ -20,4 +20,4 @@ puts-step "Installing gettext"
 #curl --silent --max-time 60 --location "$GETTEXT_TARBALL" | tar xz
 puts-step "Done in $TARGET_DIR/gettext"
 
-bpwatch stop gettext
+#bpwatch stop gettext
