@@ -195,10 +195,6 @@ source $BIN_DIR/steps/sass
 # Gettext support.
 source $BIN_DIR/steps/gettext
 
-# Django collectstatic support.
-sub-env $BIN_DIR/steps/collectstatic
-
-
 # ### Finalize
 #
 
@@ -220,6 +216,10 @@ cp $ROOT_DIR/vendor/python.webconcurrency.sh $WEBCONCURRENCY_PROFILE_PATH
 bpwatch start post_compile
   source $BIN_DIR/steps/hooks/post_compile
 bpwatch stop post_compile
+
+# Django collectstatic support.
+sub-env $BIN_DIR/steps/collectstatic
+
 
 # Store new artifacts in cache.
 bpwatch start dump_cache
