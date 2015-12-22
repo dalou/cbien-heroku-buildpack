@@ -9,6 +9,8 @@ MANAGE_FILE=${MANAGE_FILE:-fakepath}
 
 bpwatch start collectstatic
 
+echo "debugging $DISABLE_COLLECTSTATIC"
+
 if [ ! "$DISABLE_COLLECTSTATIC" ] && [ -f "$MANAGE_FILE" ]; then
     set +e
 
