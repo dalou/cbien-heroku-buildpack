@@ -7,3 +7,6 @@ make compilemessages
 # Sass
 export PATH=$HOME/.gem/bin:$PATH
 make sass
+
+# Migrations
+pyhton manage.py migrate --noinput
