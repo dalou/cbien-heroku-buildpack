@@ -10,6 +10,6 @@ if [ ! -d "$GEM_DIR" ]; then
 fi
 gem install sass --no-rdoc --no-ri --install-dir "$GEM_DIR" | indent
 export GEM_PATH=$GEM_PATH:$GEM_DIR
-puts-step "Done in $GEM_DIR"
+puts-step "Done in $GEM_PATH"
 
 bpwatch stop sass

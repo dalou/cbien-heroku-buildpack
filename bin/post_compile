@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
-PATH=$HOME/gettext/bin:$PATH
-
+# Gettext
+export PATH=$HOME/gettext/bin:$PATH
 make compilemessages
+
+# Sass
+export PATH=$HOME/.gem/bin:$PATH
 make sass
