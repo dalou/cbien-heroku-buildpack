@@ -1,7 +1,12 @@
 #!/usr/bin/env bash
 
+echo "-----> Debugging"
+pwd
+ls -la
+
 if [ -f bin/post_compile ]; then
-    echo "-----> Running post-compile hook"
+    puts-step "Running post-compile hook"
     chmod +x bin/post_compile
     sub-env bin/post_compile
+    puts-step "Done"
 fi
