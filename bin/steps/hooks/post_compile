@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 
-echo "-----> Debugging $BIN_DIR"
-pwd
-ls -la
-
 if [ -f $BIN_DIR/post_compile ]; then
     puts-step "Running post-compile hook"
     chmod +x $BIN_DIR/post_compile
