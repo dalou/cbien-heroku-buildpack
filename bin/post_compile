@@ -2,8 +2,6 @@
 
 # Gettext
 export PATH=$HOME/gettext/bin:$PATH
-python manage.py makemessages -l hk
-python scripts/generate_hukhukpo.py
 make compilemessages
 
 # Sass
