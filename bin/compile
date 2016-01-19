@@ -183,6 +183,9 @@ source $BIN_DIR/steps/pylibmc
 # Libffi support.
 source $BIN_DIR/steps/cryptography
 
+# Numpy/scipy support
+source $BIN_DIR/steps/numpy-scipy
+
 # GDAL support.
 source $BIN_DIR/steps/gdal
 
